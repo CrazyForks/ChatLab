@@ -28,7 +28,7 @@
   "tooltip": {
     "chatViewer": "Chat Record Viewer",
     "sessionIndex": "Session Index",
-    "incrementalImport": "Append Chat Records"
+    "incrementalImport": "Import More"
   },
   "incremental": {
     "title": "Append Chat Records",
@@ -102,7 +102,8 @@
       "totalMessages": "Total Messages",
       "durationDays": "Duration Days",
       "dailyAvgMessages": "Daily Avg"
-    }
+    },
+    "tools": "Quick Tools"
   },
   "filter": {
     "title": "Filter Analysis",

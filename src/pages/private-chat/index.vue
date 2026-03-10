@@ -214,15 +214,6 @@ onMounted(() => {
       >
         <template #actions>
           <UButton
-            color="neutral"
-            variant="soft"
-            size="sm"
-            icon="i-heroicons-plus-circle"
-            @click="showIncrementalImportModal = true"
-          >
-            {{ t('analysis.tooltip.incrementalImport') }}
-          </UButton>
-          <UButton
             color="primary"
             variant="soft"
             size="sm"
@@ -231,15 +222,6 @@ onMounted(() => {
           >
             {{ t('analysis.tooltip.chatViewer') }}
           </UButton>
-          <UTooltip :text="t('analysis.tooltip.sessionIndex')">
-            <UButton
-              icon="i-heroicons-clock"
-              color="neutral"
-              variant="ghost"
-              size="sm"
-              @click="showSessionIndexModal = true"
-            />
-          </UTooltip>
           <CaptureButton />
         </template>
         <!-- Tabs -->
@@ -291,6 +273,8 @@ onMounted(() => {
               :filtered-message-count="filteredMessageCount"
               :filtered-member-count="filteredMemberCount"
               :time-filter="timeFilter"
+              @open-session-index="showSessionIndexModal = true"
+              @open-incremental-import="showIncrementalImportModal = true"
             />
             <ViewTab
               v-else-if="activeTab === 'view'"

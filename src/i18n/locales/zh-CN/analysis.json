@@ -28,7 +28,7 @@
   "tooltip": {
     "chatViewer": "聊天记录查看器",
     "sessionIndex": "会话索引",
-    "incrementalImport": "追加聊天记录"
+    "incrementalImport": "增量导入"
   },
   "incremental": {
     "title": "追加聊天记录",
@@ -102,7 +102,8 @@
       "totalMessages": "消息总数",
       "durationDays": "跨度天数",
       "dailyAvgMessages": "日均消息"
-    }
+    },
+    "tools": "常用工具"
   },
   "filter": {
     "title": "自定义筛选",

@@ -15,6 +15,11 @@ import DailyTrendCard from '@/components/analysis/Overview/DailyTrendCard.vue'
 
 const { t } = useI18n()
 
+const emit = defineEmits<{
+  (e: 'openSessionIndex'): void
+  (e: 'openIncrementalImport'): void
+}>()
+
 const props = defineProps<{
   session: AnalysisSession
   memberActivity: MemberActivity[]
@@ -109,7 +114,29 @@ watch(
       :total-duration-days="totalDurationDays"
       :total-daily-avg-messages="totalDailyAvgMessages"
       :time-range="timeRange"
-    />
+    >
+      <template #tools>
+        <div class="flex flex-col gap-2">
+          <span class="mb-0.5 text-xs font-semibold tracking-wide text-white/60 dark:text-gray-500">
+            {{ t('analysis.overview.tools') }}
+          </span>
+          <button
+            class="flex items-center gap-2 rounded-xl bg-white/10 px-4 py-2.5 text-sm font-medium text-white transition-colors hover:bg-white/20 dark:bg-gray-700 dark:hover:bg-gray-600"
+            @click="emit('openIncrementalImport')"
+          >
+            <UIcon name="i-heroicons-plus-circle" class="h-4 w-4 shrink-0" />
+            {{ t('analysis.tooltip.incrementalImport') }}
+          </button>
+          <button
+            class="flex items-center gap-2 rounded-xl bg-white/10 px-4 py-2.5 text-sm font-medium text-white transition-colors hover:bg-white/20 dark:bg-gray-700 dark:hover:bg-gray-600"
+            @click="emit('openSessionIndex')"
+          >
+            <UIcon name="i-heroicons-clock" class="h-4 w-4 shrink-0" />
+            {{ t('analysis.tooltip.sessionIndex') }}
+          </button>
+        </div>
+      </template>
+    </OverviewIdentityCard>
 
     <!-- 关键指标卡片 -->
     <OverviewStatCards
