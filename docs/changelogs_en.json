@@ -1,5 +1,20 @@
 [
   {
+    "version": "0.16.1",
+    "date": "2026-04-10",
+    "summary": "This update adds support for imports with a specified format, improves WhatsApp chat detection, and refreshes diagnostic guidance with clearer prompts.",
+    "changes": [
+      {
+        "type": "feat",
+        "items": [
+          "Remove the diagnostic suggestions and replace them with clearer prompts.",
+          "Add support for imports with a specified format.",
+          "Improve the WhatsApp chat detection flow."
+        ]
+      }
+    ]
+  },
+  {
     "version": "0.16.0",
     "date": "2026-04-10",
     "summary": "This update adds a new initiative analysis view for private chats and fixes missing custom models in the model-edit dialog.",
